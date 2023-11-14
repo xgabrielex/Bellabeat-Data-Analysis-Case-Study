@@ -316,6 +316,8 @@ Cleaning of all three selected data frames was done. Now the time has come for a
 
 ## **ANALYZE**
 
+### Analysing daily_activity2 data frame
+
 I have started with a function summary() to obtain the statistical data of variables from daily_activity2.
 
 ```
@@ -413,12 +415,96 @@ dev.off()
 ```
 <img width="665" alt="pie" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/cab32d7d-5037-45cd-a407-74fdf7450040">
 
+The data suggest that users mostly log sedentary hours, which added up to 81.3%. This could either be the fault of not being active enough or simply forgetting to log a workout or activity in the tracker. According to Fitbit, it takes at least 15 min for the tracker to start recording activity, so this could be one of the reasons that the user is mostly unactive during the day.
 
+The next graph that I've decided to create was Steps vs Calories. This was done to see if there is any positive relationship between these two metrics.
 
+```
+# now I will create a scatter plot to see if there is any relationship 
+# between steps and calories 
 
+Steps_vs_Calories <- ggplot(daily_activity2, aes(x=Calories, y=Total_Steps, color=(Id)))+
+  geom_point()+
+  geom_smooth(method="loess", se=TRUE, fullrange=FALSE, level=0.95, color="black")+
+  ggtitle("Steps Taken vs Calories Burned") +
+  xlab("Calories") + ylab("Steps")+
+  scale_color_gradient(low = "pink", high = "pink3")
 
+print(Steps_vs_Calories)
 
+ggsave("Steps_vs_Calories.png")
 
+# as we can see there is positive correlation in the graph, showing that for 
+# every Id the more steps taken the more calories are burned, which was expected
+```
+<img width="424" alt="steps vs calories" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/2cc54e0d-13dd-4d67-ac94-a4a35420a211">
 
+I observed a positive relationship between steps taken and calories burned per day. This means that for the most part, the more steps were taken the more calories were burned.
 
+Next, I wanted to see how calories correlated with active and sedentary hours. I have made two graphs called Active Hours vs Calories and Sedentary Hours vs Calories.
+
+```
+#now let see if there is any correlation between active hours and calories
+
+Active_hours_vs_Calories <- ggplot(daily_activity2, aes(x=Calories, y=Active_Hours, color=(Id)))+
+  geom_point()+
+  geom_smooth(method="loess", se=TRUE, fullrange=FALSE, level=0.95, color="black")+
+  ggtitle("Active Hours vs Calories") +
+  xlab("Calories") + ylab("Active Hours")+
+  scale_color_gradient(low = "lightblue1", high = "lightblue3")
+
+print(Active_hours_vs_Calories)
+
+ggsave("Active_hours_vs_Calories.png")
+
+# there is a positive correlation to more active hours per day, more calories are burned
+
+Sedentary_hours_vs_Calories <- ggplot(daily_activity2, aes(x=Calories, y=Sedentary_Hours, color=(Id)))+
+  geom_point()+
+  geom_smooth(method="loess", se=TRUE, fullrange=FALSE, level=0.95, color="black")+
+  ggtitle("Sedentary Hours vs Calories") +
+  xlab("Calories") + ylab("Sedentary Hours")+
+  scale_color_gradient(low = "seagreen1", high = "seagreen4")
+
+print(Sedentary_hours_vs_Calories)
+
+ggsave("Sedentary_hours_vs_Calories.png")
+
+# we can see that really sedentary hours does not have much of correlation with 
+# calories burned during the day, as long as you are moving at least a little bit,
+# you will be burning calories and the rest of the day with sedentary life style will 
+# have no effect
+```
+
+<img width="518" alt="active hours vs calories" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/6ed586a7-67de-4f61-bc7d-7a5c04b045de">
+<img width="634" alt="sedentary hours vs calories" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/24208005-946f-4936-8a34-d6ac13f6377b">
+
+The data suggest that as predicted active hours have a positive relationship with calories, so the more active you are the more calories you burn. The sedentary hours have, for the most part, no relationship with burned calories. This would mean that no matter how sedentary your lifestyle is if you are active for a short period of time, you can burn calories during the day.
+
+The next relationship that I wanted to explore was how activity differences affected distance.
+
+```
+#now lets see how does activity differences translates to  distance 
+
+library(dplyr)
+
+activity_distance <- daily_activity2 %>%
+  summarize(
+    distance = c(sum(Very_Active_Distance), sum(Moderately_Active_Distance), sum(Light_Active_Distance)),
+  active_hours = c(sum(Very_Active_Hours), sum(Fairly_Active_Hours), sum(Lightly_Active_Hours)))
+
+#creting new column  
+activity_types= c("Very Active", "Fairly Active", "Lightly Active")
+activity_distance$activity_types = activity_types
+activity_distance$ratio <- activity_distance$distance/activity_distance$active_hours
+
+View(activity_distance)
+
+# form this table we can see that very active hours has largest ratio, meaning 
+# that that 1 active hour is giving 4 miles in comparison lightly active hour gives us only 1 mile
+```
+
+<img width="226" alt="activity distance" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/d6fe28ed-14fc-4e76-bcc5-9f458b31f266">
+
+This table 
 

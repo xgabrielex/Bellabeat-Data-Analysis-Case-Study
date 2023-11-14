@@ -309,11 +309,111 @@ View(sleep_day)
 
 <img width="734" alt="sleep day" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/bdac6788-ceb2-4058-962b-c0550d42c834">
 <img width="347" alt="sleep day 1" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/eb30edfa-1a87-414d-b1ac-efa45901b553">
+
 <img width="360" alt="sleep day 2" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/05e70d11-a160-4d76-9891-7ecaa929b521">
 
 Cleaning of all three selected data frames was done. Now the time has come for analysis of the data.
 
 ## **ANALYZE**
+
+I have started with a function summary() to obtain the statistical data of variables from daily_activity2.
+
+```
+# data analysis of daily activity starts
+summary(daily_activity2)
+
+# from this we get important information on mean of variables like
+# daily calories, steps and distance
+```
+<img width="712" alt="analysis daily activity2 " src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/0daf19cb-000f-4e29-8316-74fdcf22f7de">
+
+This provided me with the average daily calories burned 2304, which fits into the normal interval of burned calories per day. According to Cleaveland Clinic, humans burn 1300-2000 calories per day without working out, but that depends on age, sex, and so on. (https://health.clevelandclinic.org/calories-burned-in-a-day/)
+
+Another statistic that I have observed is the average daily steps taken, which was 7638. The recommended step count per day is 8000 - 10000, so our consumers could do a little better in achieving that goal. (https://utswmed.org/medblog/how-many-steps-per-day/)
+
+Next, I have created a graph to showcase which days of the week people were more active.
+
+```
+# now we will see which days in a week people are more active
+
+install.packages("ggplot2")
+library(ggplot2)
+
+Frequency_Weekdays <- ggplot(daily_activity2, aes(x = factor(format(Date, "%a"), levels = c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")))) +
+  geom_bar(fill = "lightpink") +
+  labs(title = "Frequency on Weekdays",
+       x = "Weekdays",
+       y = "Frequency") +
+  theme_classic()
+
+print(Frequency_Weekdays)
+
+ggsave("Frequency_Weekdays.png", plot = Frequency_Weekdays, device = "png")
+
+# looks like people are mostly active on tues, wend, and thurs, and then the usage of 
+# wellness app drops towards the weekend
+```
+![frequency weekdays](https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/2d72b1da-d39c-427e-aa61-561b6c42099d)
+
+The data suggests that people are mostly active on Tuesday, Wednesday, and Thursday. Then their activity slowly drops on the weekends and on Monday we observe a slight rise compared to Sunday. 
+
+Next, I created a pie chart representing different activity hours logged during the day.
+
+```
+# now I will make a pie chart for active hours and sedentary hours 
+
+# first I will calculate sums of all hours loged, sedentary and active
+
+Total_Sedentary_Hours <- sum(daily_activity2$Sedentary_Hours)
+Total_Very_Active_Hours <- sum(daily_activity2$Very_Active_Hours)
+Total_Fairly_Active_Hours <- sum(daily_activity2$Fairly_Active_Hours)
+Total_Lightly_Active_Hours <- sum(daily_activity2$Lightly_Active_Hours)
+
+# then I will create a data frame where these calculations will be stored
+
+hours_chart_data <- data.frame (
+  Variable = c("Very Active Hours", "Fairly Active Hours","Lightly Active Hours", "Sedentary Hours"),
+  Value = c(Total_Very_Active_Hours, Total_Fairly_Active_Hours, Total_Lightly_Active_Hours, Total_Sedentary_Hours))
+
+# then I will create percentage values for better representation
+
+percentages <- round(100 * hours_chart_data$Value / sum(hours_chart_data$Value), 1)
+
+# create a vector of labels with percentages
+labels_with_percentages <- paste(hours_chart_data$Variable, percentages, "%")
+
+# to have nicer color themes I will use RColorBrewer package
+
+install.packages("RColorBrewer")
+library(RColorBrewer)
+library(graphics)
+# pick a pallet and pick label size and creating the pie chart
+
+myPalette <- brewer.pal(5, "RdPu") 
+label_size <- 0.6
+
+png("pie.png")
+
+pie <- pie(hours_chart_data$Value, 
+           labels = labels_with_percentages, 
+           main = "Percentage of Logged Hours", 
+           cex.main = 1.2, 
+           radius = 1, 
+           border = "white", 
+           col = myPalette, 
+           cex = label_size)
+
+# created a pie chart and saved it as pdf for better quality
+# this data suggest that people mostly log sedentary hours, wich take up
+# more than 81 % of all hours logged 
+
+dev.off()
+
+# dev.off() function for closing plots
+```
+<img width="665" alt="pie" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/cab32d7d-5037-45cd-a407-74fdf7450040">
+
+
 
 
 

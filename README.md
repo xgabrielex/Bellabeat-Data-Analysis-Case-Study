@@ -353,7 +353,7 @@ ggsave("Frequency_Weekdays.png", plot = Frequency_Weekdays, device = "png")
 # looks like people are mostly active on tues, wend, and thurs, and then the usage of 
 # wellness app drops towards the weekend
 ```
-![frequency weekdays](https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/2d72b1da-d39c-427e-aa61-561b6c42099d)
+<img width="535" alt="freq weekdays" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/e795e1f0-7812-4d30-9860-6b493e33a266">
 
 The data suggests that people are mostly active on Tuesday, Wednesday, and Thursday. Then their activity slowly drops on the weekends and on Monday we observe a slight rise compared to Sunday. 
 

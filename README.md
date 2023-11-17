@@ -506,5 +506,92 @@ View(activity_distance)
 
 <img width="226" alt="activity distance" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/d6fe28ed-14fc-4e76-bcc5-9f458b31f266">
 
-This table 
+From the table above we can see that very active hours have the largest ratio, which means that 1 active hour gives 4 miles of distance, in comparison lightly active hour gives us only 1 mile distance. This ratio suggests that you could reach your distance goals and have a more productive workout with higher intensity.
+
+Next, I wanted to see different activity types of hours in correlation with burned calories.
+```
+# now let's see how activity type affects calories
+
+install.packages("ggpubr")
+library(ggpubr)
+
+Very_Active_Hours_vs_Calories <- ggplot(daily_activity2, aes(x=Calories, y=Very_Active_Hours, color=(Id)))+
+  geom_point()+
+  geom_smooth(method="loess", se=TRUE, fullrange=FALSE, level=0.95, color="black")+
+  ggtitle("Very Active Hours vs Calories") +
+  xlab("Calories") + ylab("Very Active Hours")+
+  scale_color_gradient(low = "palevioletred1", high = "palevioletred4")
+
+Fairly_Active_Hours_vs_Calories <- ggplot(daily_activity2, aes(x=Calories, y=Fairly_Active_Hours, color=(Id)))+
+  geom_point()+
+  geom_smooth(method="loess", se=TRUE, fullrange=FALSE, level=0.95, color="black")+
+  ggtitle("Fairly Active Hours vs Calories") +
+  xlab("Calories") + ylab("Fairly Active Hours")+
+  scale_color_gradient(low = "paleturquoise1", high = "paleturquoise4")
+
+Lightly_Active_Hours_vs_Calories <- ggplot(daily_activity2, aes(x=Calories, y=Lightly_Active_Hours, color=(Id)))+
+  geom_point()+
+  geom_smooth(method="loess", se=TRUE, fullrange=FALSE, level=0.95, color="black")+
+  ggtitle("Lightly Active Hours vs Calories") +
+  xlab("Calories") + ylab("Lightly Active Hours")+
+  scale_color_gradient(low = "palegreen", high = "palegreen4")
+
+ggarrange(Very_Active_Hours_vs_Calories, Fairly_Active_Hours_vs_Calories, Lightly_Active_Hours_vs_Calories, 
+          ncol = 2, nrow = 2)
+```
+
+<img width="669" alt="diff active hours" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/bf49c933-b2fa-4f02-b2b4-5224afa11ff0">
+
+With the graphs above we are watching an interesting correlation. As expected, the very active hours burn calories with the highest positive correlation. Fairly active hours have a slow and steady rise of burned calories compared to hours passed, but lightly active hours show a rapid rise and then at around 2500 cal, 4 hours, the curve is linear, wich would suggest significantly more hours are needed to burn calories.
+
+### Analysing hourly_intensities data frame
+
+With this data set, I wanted to see which hours of the day were mostly logged and therefore the most active. First I grouped the data set by Time variable. 
+
+```
+time_intensity<- hourly_intensities %>%
+  group_by(Time) %>%
+  summarize(Sum_Total_Intensity=sum(Total_Intensity))
+
+View(time_intensity)
+```
+
+Then I created a chart to observe the relationship between intensity and hours in the day.
+
+```
+intensity_vs_hour <- ggplot(time_intensity, aes(x = Time, y = Sum_Total_Intensity))+
+  geom_col(fill = "lightpink") +
+  labs(title = "Hourly Intensity",
+       x = "Time",
+       y = "Intensity") +
+  theme_classic()
+print(intensity_vs_hour)  
+```
+
+<img width="605" alt="hourly intensities graph" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/bf35cc08-d210-468a-8f7e-8f088393b607">
+
+The graph suggests that users had the highest intensity logged from 5 PM to 7 PM. As expected we see very low activity from 11 PM until 5 AM. From 5 AM the intensity is rising steadily. The second highest wave is observed around 12 PM - 2 PM.
+
+### Analysing sleep_day data frame
+
+I wanted to figure out how many hours on average users sleep per night and how long does it take for them to fall asleep.
+```
+#how many hours on average sleeps
+summary(sleep_day)
+mean(sleep_day$Total_Minutes_Asleep)/60
+
+#how many minutes spends in bed before falling asleep
+sleep_day$Minutes_Awake <- sleep_day$Total_Time_In_Bed - sleep_day$Total_Minutes_Asleep
+
+average_minutes_awake <- mean(sleep_day$Minutes_Awake, na.rm = TRUE)
+
+print(average_minutes_awake)
+```
+<img width="470" alt="sleep day 3" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/e30c5180-4ba9-4f48-98da-ac9c1c120bf1">
+
+On average users sleep 6.9 hours per night, which according to NIH is a little bit too little. To meet the minimum recommended hours of sleep adults should sleep 7-9 hours per night. (https://www.nhlbi.nih.gov/health/sleep/how-much-sleep)
+
+When talking about minutes spent in bed before falling asleep, the Sleep Foundation recommends that it should take 15-20 min. In our case, it takes around 40 minutes.  
+
+
 

@@ -591,7 +591,7 @@ print(average_minutes_awake)
 
 On average users sleep 6.9 hours per night, which according to NIH is a little bit too little. To meet the minimum recommended hours of sleep adults should sleep 7-9 hours per night. (https://www.nhlbi.nih.gov/health/sleep/how-much-sleep)
 
-When talking about minutes spent in bed before falling asleep, the Sleep Foundation recommends that it should take 15-20 min. In our case, it takes around 40 minutes.  
+When talking about minutes spent in bed before falling asleep, the Sleep Foundation recommends that it should take 15-20 min. In our case, it takes around 40 minutes (https://www.sleepfoundation.org/sleep-faqs/how-long-should-it-take-to-fall-asleep#:~:text=Most%20healthy%20people%20fall%20asleep,fall%20asleep%20easily%20every%20night)
 
 
 

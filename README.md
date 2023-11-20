@@ -595,6 +595,9 @@ When talking about minutes spent in bed before falling asleep, the Sleep Foundat
 
 ## SHARE
 
+![all visual](https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/bd3106aa-fbed-414c-81b2-dea6ab59b5b6)
+
+
 
 
 

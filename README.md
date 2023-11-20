@@ -542,7 +542,7 @@ ggarrange(Very_Active_Hours_vs_Calories, Fairly_Active_Hours_vs_Calories, Lightl
 
 <img width="669" alt="diff active hours" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/bf49c933-b2fa-4f02-b2b4-5224afa11ff0">
 
-With the graphs above we are watching an interesting correlation. As expected, the very active hours burn calories with the highest positive correlation. Fairly active hours have a slow and steady rise of burned calories compared to hours passed, but lightly active hours show a rapid rise and then at around 2500 cal, 4 hours, the curve is linear, wich would suggest significantly more hours are needed to burn calories.
+With the graphs above we are watching an interesting correlation. As expected, the very active hours burn calories with the highest positive correlation. Fairly active hours have a slow rise of burned calories compared to hours passed and could mean a very weak positive correlation, but lightly active hours show a rapid rise and then at around 2000 cal, 4 hours, the curve is linear, which would mean that there is no correlation between two metrics.
 
 ### Analysing hourly_intensities data frame
 
@@ -595,7 +595,23 @@ When talking about minutes spent in bed before falling asleep, the Sleep Foundat
 
 ## SHARE
 
-![all visual](https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/bd3106aa-fbed-414c-81b2-dea6ab59b5b6)
+![all visual](https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/4e05e311-27ef-4e41-86e2-ff1c763db06c)
+
+### Analysis Summary
+
+The average daily calories burned is 2304. This exceeds the normal interval of burned calories per day, which is 1300-2000 calories per day. 
+The average daily steps taken is 7638. Users have not reached the recommended steps per day, which is 8000-10000.
+Most days that users logged their activity were Tuesday, Wednesday, and Thursday. The activity dropped over the weekend and started to slowly rise on Monday. 
+81.3% of hours logged were sedentary, this could either be the fault of not being active enough or simply forgetting to log a workout or activity in the tracker.
+As expected, the daily steps and daily burned calories relationship has a positive correlation, meaning the more steps were taken the more calories were burned during the day. In the same way, active hours and daily calories have a positive correlation, the more active hours logged during the day the more calories burned. While sedentary hours and calories do not have any correlation. 
+The ratio between different active hours and distance was highest in the very active hours type, which was 1 active hour to 4 miles of distance, in comparison 1 lightly active hour gave a 1-mile distance. This ratio suggests that users could reach their distance goals and have a more productive workout with higher intensity.
+When talking about different activity hours and their relationship with burned calories, as with distance metric, very active hours have a positive correlation, meaning the more active hours users logged the more calories were burned. I've noticed a trend that up until the 1-hour mark and around 3000, it's a super slow rise of hours, but calories are being burned fast. Once it hits that mark, the hours needed to burn calories rise significantly, and users have to stay very active for a longer time to burn more than 3000 calories. With fairly active hours it's a pretty weak positive correlation, and interestingly enough with lightly active hours, there is a positive correlation up until around 4 hours and 2000 calories mark, and then I observed no correlation at all.
+Hourly intensities logged during the day suggest that users had the highest intensity from 5 PM to 7 PM, which is typical after-work hours. As expected we see very low activity from 11 PM until 5 AM, as it is night time. From 5 AM the intensity is rising steadily. The second highest wave is observed around 12 PM - 2 PM, which is probably people who work night shifts and who are going to work out, or there is some waking done during lunch at work.
+Regarding sleep data, on average users sleep 6.9 hours per night, which according to NIH is not enough. To meet the minimum recommended hours of sleep adults should sleep 7-9 hours per night. 
+When talking about minutes spent in bed before falling asleep, the Sleep Foundation recommends that it should take 15-20 min. In our case, it takes around 40 minutes for users to fall asleep.
+
+## ACT
+
 
 
 

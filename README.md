@@ -62,7 +62,7 @@ library(tidyverse)
 setwd("/cloud/project/Fitabase Data 4.12.16-5.12.16")
 ```
 
-### Choosing the files to work with
+### **Choosing the files to work with**
 
 I looked through the CSV files in the File pane and immediately decided not to use the following files: 
 
@@ -144,7 +144,7 @@ After reviewing all data frames, I have decided to use the following for further
 * **hourly_intensities**
 * **sleep_day**
 
-### Cleaning selected data frames - Daily Activity
+### **Cleaning selected data frames - Daily Activity**
 
 First, I've started with the **daily_activity** data frame. Running glimpse() and str() functions gave me basic information like the data frame has 940 rows and 15 columns, I was also presented with the data type of each variable. That is where I've noticed that ActivityDate is a character and not a date type of variable, which I would need to change.
 
@@ -224,7 +224,7 @@ head(daily_activity2)
 
 Cleaning and manipulating daily activity was done. Next, it was time for another data frame.
 
-### Cleaning selected data frames - Hourly Intensities
+### **Cleaning selected data frames - Hourly Intensities**
 
 I've run head(), glimpse(), and str() for basic information about the data frame. The hourly intensities data frame consists of 4 columns and 22099 rows. ActivityHour contains date and time in one column, so I will separate them and change the data type of Time. Also, column names need some manipulation to make them neater.
 
@@ -279,7 +279,7 @@ glimpse(hourly_intensities)
 
 Cleaning and manipulating of **hourly intensities** data frame was done. Next, it was time to clean and manipulate **sleep day** data frame.
 
-### Cleaning selected data frames - Sleep Day
+### **Cleaning selected data frames - Sleep Day**
 
 I've run head(), glimpse(), and str() for basic information about the data frame. The sleep day data frame  consists of 5 columns and 413 rows. I've also checked for unique Ids, NA values, and duplicates. The number of unique Ids is 24, no Null values but 3 duplicates were found. I've removed duplicates with distinct() functions and manipulated column names.
 
@@ -316,7 +316,7 @@ Cleaning of all three selected data frames was done. Now the time has come for a
 
 ## **ANALYZE**
 
-### Analysing daily_activity2 data frame
+### **Analysing daily_activity2 data frame**
 
 I have started with a function summary() to obtain the statistical data of variables from daily_activity2.
 
@@ -544,7 +544,7 @@ ggarrange(Very_Active_Hours_vs_Calories, Fairly_Active_Hours_vs_Calories, Lightl
 
 With the graphs above we are watching an interesting correlation. As expected, the very active hours burn calories with the highest positive correlation. Fairly active hours have a slow rise of burned calories compared to hours passed and could mean a very weak positive correlation, but lightly active hours show a rapid rise and then at around 2000 cal, 4 hours, the curve is linear, which would mean that there is no correlation between two metrics.
 
-### Analysing hourly_intensities data frame
+### **Analysing hourly_intensities data frame**
 
 With this data set, I wanted to see which hours of the day were mostly logged and therefore the most active. First I grouped the data set by Time variable. 
 
@@ -572,7 +572,7 @@ print(intensity_vs_hour)
 
 The graph suggests that users had the highest intensity logged from 5 PM to 7 PM. As expected we see very low activity from 11 PM until 5 AM. From 5 AM the intensity is rising steadily. The second highest wave is observed around 12 PM - 2 PM.
 
-### Analysing sleep_day data frame
+### **Analysing sleep_day data frame**
 
 I wanted to figure out how many hours on average users sleep per night and how long does it take for them to fall asleep.
 ```
@@ -593,27 +593,58 @@ On average users sleep 6.9 hours per night, which according to NIH is a little b
 
 When talking about minutes spent in bed before falling asleep, the Sleep Foundation recommends that it should take 15-20 min. In our case, it takes around 40 minutes (https://www.sleepfoundation.org/sleep-faqs/how-long-should-it-take-to-fall-asleep#:~:text=Most%20healthy%20people%20fall%20asleep,fall%20asleep%20easily%20every%20night)
 
-## SHARE
+## **SHARE**
 
 ![all visual](https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/4e05e311-27ef-4e41-86e2-ff1c763db06c)
 
-### Analysis Summary
+### **Analysis Summary**
 
-The average daily calories burned is 2304. This exceeds the normal interval of burned calories per day, which is 1300-2000 calories per day. 
-The average daily steps taken is 7638. Users have not reached the recommended steps per day, which is 8000-10000.
-Most days that users logged their activity were Tuesday, Wednesday, and Thursday. The activity dropped over the weekend and started to slowly rise on Monday. 
-81.3% of hours logged were sedentary, this could either be the fault of not being active enough or simply forgetting to log a workout or activity in the tracker.
-As expected, the daily steps and daily burned calories relationship has a positive correlation, meaning the more steps were taken the more calories were burned during the day. In the same way, active hours and daily calories have a positive correlation, the more active hours logged during the day the more calories burned. While sedentary hours and calories do not have any correlation. 
-The ratio between different active hours and distance was highest in the very active hours type, which was 1 active hour to 4 miles of distance, in comparison 1 lightly active hour gave a 1-mile distance. This ratio suggests that users could reach their distance goals and have a more productive workout with higher intensity.
-When talking about different activity hours and their relationship with burned calories, as with distance metric, very active hours have a positive correlation, meaning the more active hours users logged the more calories were burned. I've noticed a trend that up until the 1-hour mark and around 3000, it's a super slow rise of hours, but calories are being burned fast. Once it hits that mark, the hours needed to burn calories rise significantly, and users have to stay very active for a longer time to burn more than 3000 calories. With fairly active hours it's a pretty weak positive correlation, and interestingly enough with lightly active hours, there is a positive correlation up until around 4 hours and 2000 calories mark, and then I observed no correlation at all.
-Hourly intensities logged during the day suggest that users had the highest intensity from 5 PM to 7 PM, which is typical after-work hours. As expected we see very low activity from 11 PM until 5 AM, as it is night time. From 5 AM the intensity is rising steadily. The second highest wave is observed around 12 PM - 2 PM, which is probably people who work night shifts and who are going to work out, or there is some waking done during lunch at work.
-Regarding sleep data, on average users sleep 6.9 hours per night, which according to NIH is not enough. To meet the minimum recommended hours of sleep adults should sleep 7-9 hours per night. 
-When talking about minutes spent in bed before falling asleep, the Sleep Foundation recommends that it should take 15-20 min. In our case, it takes around 40 minutes for users to fall asleep.
+* The average daily calories burned is 2304. This exceeds the normal interval of burned calories per day, which is 1300-2000 calories per day. 
+* The average daily steps taken is 7638. Users have not reached the recommended steps per day, which is 8000-10000.
+* Most days that users logged their activity were Tuesday, Wednesday, and Thursday. The activity dropped over the weekend and started to slowly rise on Monday. 
+* 81.3% of hours logged were sedentary, this could either be the fault of not being active enough or simply forgetting to log a workout or activity in the tracker.
+* As expected, the daily steps and daily burned calories relationship has a positive correlation, meaning the more steps were taken the more calories were burned during the day. In the same way, active hours and daily calories have a positive correlation, the more active hours logged during the day the more calories burned. While sedentary hours and calories do not have any correlation. This is kind of expected but still exciting news, as no matter how sedentary our lifestyle is, if we move at least a little, calories will be burned.
+* The ratio between different active hours and distance was highest in the very active hours type, which was 1 active hour to 4 miles of distance, in comparison 1 lightly active hour gave a 1-mile distance. This ratio suggests that users could reach their distance goals and have a more productive workout with higher intensity.
+* When talking about different activity hours and their relationship with burned calories, as with distance metric, very active hours have a positive correlation, meaning the more active hours users logged the more calories were burned. I've noticed a trend that up until the 1-hour mark and around 3000, it's a super slow rise of hours, but calories are being burned fast. Once it hits that mark, the hours needed to burn calories rise significantly, and users have to stay very active for a longer time to burn more than 3000 calories. With fairly active hours it's a pretty weak positive correlation, and interestingly enough with lightly active hours, there is a positive correlation up until around 4 hours and 2000 calories mark, and then I observed no correlation at all. This would suggest that shorter, higher-intensity work would be beneficial for those who are trying to lose some weight.
+* Hourly intensities logged during the day suggest that users had the highest intensity from 5 PM to 7 PM, which is typical after-work hours. As expected we see very low activity from 11 PM until 5 AM, as it is night time. From 5 AM the intensity is rising steadily. The second highest wave is observed around 12 PM - 2 PM, which is probably people who work night shifts and who are going to work out, or there is some waking done during lunch at work.
+* Regarding sleep data, on average users sleep 6.9 hours per night, which according to NIH is not enough. To meet the minimum recommended hours of sleep adults should sleep 7-9 hours per night. 
+* When talking about minutes spent in bed before falling asleep, the Sleep Foundation recommends that it should take 15-20 min. In our case, it takes around 40 minutes for users to fall asleep, which could mean that they either have some trouble falling asleep, or staying on their phones, etc.
 
-## ACT
+## **ACT**
 
+Bellabeat is a wellness brand for women with a goal to help women improve their health by developing wearables and accompanying products that monitor biometric and lifestyle data. After performing an analysis on non-Bellabeat products, I have identified user trends that can help not only Bellabeat's users but also influence the company's marketing strategy. 
 
+As my assignment was to produce recommendations towards one of Bellabeat's products, I've chosen the Bellabeat app, which collects the activity, sleep, stress, menstrual cycle, and mindfulness habits of its users. This data closely resembles the type of data collected from Fitbit users (which was analyzed in this project) and therefore can be used in drawing conclusions regarding users of Bellabeat's app.
 
+Before presenting the main conclusions and recommendations to stakeholders Urška Sršen CCO and Sando Mur, Mathematician, and Bellabeat’s cofounder, regarding Beallabeat's app, I would like to mention that the data that I have worked with was limited. It only had 24-33 unique users in datasets, there was no information on whether the users were women, their age, and so on. The data was also collected through external sources and came from non-Bellabeat products.
 
+For the future, I would suggest continuing the analysis of user trends, however, the source of the data should be the Bellabeat app, the metadata would be important and the scope should be much larger than 30 users.
 
+### **Conclution**
 
+The users of the non-Bellabeat product signal the largest problem of wellness-oriented businesses which is not consistently logging their activity, which resulted in 81.3% of logged sedentary hours. With this metric, there are not only limitations in providing users with accurate information about their activity and health but also it raises challenges to the company's data-oriented development. - nzn
+
+### **Recomendations**
+
+**1. Reminder notifications**
+Users have not reached the recommended steps per day, which is 8000-10000, the reached number was 7638. Notification could help users remember their step goal if they have one, or just by default target 10000 per day.
+
+**2. Weekend challenge** 
+Since I have observed users' activity declines on weekends, therefore a "weekend fitness challenge" could be a great way to encourage people to be more active and log their activity on the weekends.
+
+**3. The activity report**
+During the analysis of users' logged hours, it was clear that striking 81.3% of logged time was sedentary. To avoid this in the Bellabeat app it is important to have clear communication with the user about the importance of logging their activity as it helps form recommendations, predictions, and suggestions for their healthy habits. After a month of usage, the user could get a monthly report with a short analysis of their data, however, the report would clearly communicate which days the app was not used and what percentage of accuracy the report is, this would help the user to understand that by logging the active time they are actually helping themselves.
+
+**4. Move a little**
+During the analysis, I learned that steps taken and active hours have a positive correlation with burned calories and that sedentary hours have no correlation. This is expected but still exciting news. With this information, the Bellabeat app could have a "Move a little" notification which would be prompted after a long period of sedentary activity logged on the app. It would encourage people to as it says move at least a little bit because that's all it takes to get closer to fitness goals or get those steps in.
+
+**5. Recommended HITT workouts**
+For someone who is trying to lose weight or reach a certain distance daily, data suggest that shorter higher intensity workouts would be the key. The Bellabeat app could have a recommended workouts section depending on the activity logged and preferences pre-defined by the user. 
+
+**6. Motivation boost**
+As I've learned from data analysis, the most active hours of the day are 12 PM to 2 PM and 5 PM to 7 PM. During this time people are most likely to be active therefore Bellabeat app could have "Motivational boost" notifications during these hours. If the person were working out and received a motivational message, it would validate their work, and if not, it would work as a reminder to be more active.
+
+**7. Evening meditation**
+User data suggest that people are not getting enough sleep and having a harder time falling asleep. To try and solve this issue Bellabeat app could have an "Evening meditation" integration which would recommend users a 5-minute meditation before sleep. This could potentially help users fall asleep and get the recommended 7-9 hours of sleep per day.
+
+**8. 

@@ -627,24 +627,31 @@ According to the CDC (Centers for Disease Control and Prevention) living a non-a
 ### **Recomendations**
 
 **1. Reminder notifications**
+
 Users have not reached the recommended steps per day, which is 8000-10000, the reached number was 7638. Notification could help users remember their step goal if they have one, or just by default target 10000 per day.
 
 **2. Weekend challenge** 
+
 Since I have observed users' activity declines on weekends, a "weekend fitness challenge" could be a great way to encourage people to be more active and log their activity on the weekends.
 
 **3. The activity report**
+
 During the analysis of users' logged hours, it was clear that striking 81.3% of logged time was sedentary. To avoid this in the Bellabeat app it is important to have clear communication with the user about the importance of logging their activity as it helps form recommendations, predictions, and suggestions for their healthy habits. After a month of usage, the user could get a monthly report with a short analysis of their data, however, the report would clearly communicate which days the app was not used and what percentage of accuracy the report is, this would help the user to understand that by logging the active time they are actually helping themselves.
 
 **4. Move a little**
+
 During the analysis, I learned that steps taken and active hours have a positive correlation with burned calories and that sedentary hours have no correlation. This is expected but still exciting news. With this information, the Bellabeat app could have a "Move a little" notification which would be prompted after a long period of sedentary activity logged on the app. It would encourage people to as it says move at least a little bit because that's all it takes to get closer to fitness goals or get those steps in.
 
 **5. Recommended HITT workouts**
+
 For someone who is trying to lose weight or reach a certain distance daily, data suggest that shorter higher intensity workouts would be the key. The Bellabeat app could have a recommended workouts section depending on the activity logged and preferences pre-defined by the user. 
 
 **6. Motivation boost**
+
 As I've learned from data analysis, the most active hours of the day are 12 PM to 2 PM and 5 PM to 7 PM. During this time people are most likely to be active therefore Bellabeat app could have "Motivational boost" notifications during these hours. If the person were working out and received a motivational message, it would validate their work, and if not, it would work as a reminder to be more active.
 
 **7. Evening meditation**
+
 User data suggest that people are not getting enough sleep and having a harder time falling asleep. To try and solve this issue Bellabeat app could have an "Evening meditation" integration which would recommend users a 5-minute meditation before sleep. This could potentially help users fall asleep and get the recommended 7-9 hours of sleep per day.
 
 ### **Recourses**

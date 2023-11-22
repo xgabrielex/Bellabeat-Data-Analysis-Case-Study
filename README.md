@@ -307,12 +307,9 @@ colnames(sleep_day) <- gsub("([a-z])([A-Z])", "\\1_\\2", colnames(sleep_day))
 View(sleep_day)
 ```
 
-<img width="734" alt="sleep day" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/bdac6788-ceb2-4058-962b-c0550d42c834">
-<img width="347" alt="sleep day 1" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/eb30edfa-1a87-414d-b1ac-efa45901b553">
-
-
-
-<img width="360" alt="sleep day 2" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/05e70d11-a160-4d76-9891-7ecaa929b521">
+<br> <img width="734" alt="sleep day" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/bdac6788-ceb2-4058-962b-c0550d42c834">
+<br> <img width="347" alt="sleep day 1" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/eb30edfa-1a87-414d-b1ac-efa45901b553">
+<br> <img width="360" alt="sleep day 2" src="https://github.com/xgabrielex/Bellabeat-Data-Analysis-Case-Study/assets/150829287/05e70d11-a160-4d76-9891-7ecaa929b521">
 
 Cleaning of all three selected data frames was done. Now the time has come for analysis of the data.
 

@@ -656,6 +656,8 @@ User data suggest that people are not getting enough sleep and having a harder t
 
 ### **Recourses**
 
+* FitBit Fitness Tracker Data (https://www.kaggle.com/datasets/arashnic/fitbit)
+  
 * Cleaveland Clinic "Here’s How Many Calories You Naturally Burn in a Day" (https://health.clevelandclinic.org/calories-burned-in-a-day/)
   
 * UTSouthwestern Medical Center "Focusing on 10,000 steps a day could be a misstep" (https://utswmed.org/medblog/how-many-steps-per-day/)

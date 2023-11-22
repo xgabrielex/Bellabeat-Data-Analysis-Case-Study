@@ -630,7 +630,7 @@ According to the CDC (Centers for Disease Control and Prevention) living a non-a
 Users have not reached the recommended steps per day, which is 8000-10000, the reached number was 7638. Notification could help users remember their step goal if they have one, or just by default target 10000 per day.
 
 **2. Weekend challenge** 
-Since I have observed users' activity declines on weekends, therefore a "weekend fitness challenge" could be a great way to encourage people to be more active and log their activity on the weekends.
+Since I have observed users' activity declines on weekends, a "weekend fitness challenge" could be a great way to encourage people to be more active and log their activity on the weekends.
 
 **3. The activity report**
 During the analysis of users' logged hours, it was clear that striking 81.3% of logged time was sedentary. To avoid this in the Bellabeat app it is important to have clear communication with the user about the importance of logging their activity as it helps form recommendations, predictions, and suggestions for their healthy habits. After a month of usage, the user could get a monthly report with a short analysis of their data, however, the report would clearly communicate which days the app was not used and what percentage of accuracy the report is, this would help the user to understand that by logging the active time they are actually helping themselves.

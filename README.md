@@ -620,9 +620,9 @@ Before presenting the main conclusions and recommendations to stakeholders Uršk
 
 For the future, I would suggest continuing the analysis of user trends, however, the source of the data should be the Bellabeat app, the metadata would be important and the scope should be much larger than 30 users.
 
-### **Conclution**
+### **Conclutions**
 
-The users of the non-Bellabeat product signal the largest problem of wellness-oriented businesses which is not consistently logging their activity, which resulted in 81.3% of logged sedentary hours. With this metric, there are not only limitations in providing users with accurate information about their activity and health but also it raises challenges to the company's data-oriented development. - nzn
+According to the CDC (Centers for Disease Control and Prevention) living a non-active lifestyle can lead to heart disease, obesity, high blood pressure, high blood cholesterol, type 2 diabetes, and various cancers. Regular physical activity is one of the most important factors in improving people's health and it benefits everyone, regardless of their age, sex, race, ethnicity, or current fitness level. That being said, our analysis has shown that most logged hours (81.3%) of our users were sedentary, they were not hitting the recommended step count and had trouble falling asleep and sleeping the recommended 7-9 hours per day. It is truly important to encourage Bellabeats users to lead a more active lifestyle and understand its benefits. 
 
 ### **Recomendations**
 
@@ -647,4 +647,14 @@ As I've learned from data analysis, the most active hours of the day are 12 PM t
 **7. Evening meditation**
 User data suggest that people are not getting enough sleep and having a harder time falling asleep. To try and solve this issue Bellabeat app could have an "Evening meditation" integration which would recommend users a 5-minute meditation before sleep. This could potentially help users fall asleep and get the recommended 7-9 hours of sleep per day.
 
-**8. 
+### **Recourses**
+
+* Cleaveland Clinic "Here’s How Many Calories You Naturally Burn in a Day" (https://health.clevelandclinic.org/calories-burned-in-a-day/)
+  
+* UTSouthwestern Medical Center "Focusing on 10,000 steps a day could be a misstep" (https://utswmed.org/medblog/how-many-steps-per-day/)
+  
+* National Heart, Lung, and Blood Institute "How Much Sleep Is Enough?" (https://www.nhlbi.nih.gov/health/sleep/how-much-sleep)
+  
+* Sleep Foundation "How Long Should It Take to Fall Asleep?" (https://www.sleepfoundation.org/sleep-faqs/how-long-should-it-take-to-fall-asleep#:~:text=Most%20healthy%20people%20fall%20asleep,fall%20asleep%20easily%20every%20night)
+  
+* CDC "Physical Inactivity" (https://www.cdc.gov/chronicdisease/resources/publications/factsheets/physical-activity.htm#:~:text=Not%20getting%20enough%20physical%20activity%20can%20lead%20to%20heart%20disease,cholesterol%2C%20and%20type%202%20diabetes)

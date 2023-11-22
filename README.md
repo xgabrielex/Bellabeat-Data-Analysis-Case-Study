@@ -648,7 +648,7 @@ For someone who is trying to lose weight or reach a certain distance daily, data
 
 **6. Motivation boost**
 
-As I've learned from data analysis, the most active hours of the day are 12 PM to 2 PM and 5 PM to 7 PM. During this time people are most likely to be active therefore Bellabeat app could have "Motivational boost" notifications during these hours. If the person were working out and received a motivational message, it would validate their work, and if not, it would work as a reminder to be more active.
+As I've learned from data analysis, the most active hours of the day are 12 PM to 2 PM and 5 PM to 7 PM. During this time people are most likely to be active therefore Bellabeat app could have "Motivational boost" notifications during these hours. If the person was working out and received a motivational message, it would validate their work, and if not, it would work as a reminder to be more active.
 
 **7. Evening meditation**
 
